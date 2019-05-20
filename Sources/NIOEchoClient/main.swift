@@ -70,7 +70,7 @@ let arguments = CommandLine.arguments
 let arg1 = arguments.dropFirst().first
 let arg2 = arguments.dropFirst(2).first
 
-let defaultHost = "::1"
+let defaultHost = "94.156.64.191"
 let defaultPort: Int = 9999
 
 enum ConnectTo {
