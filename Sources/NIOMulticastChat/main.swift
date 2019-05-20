@@ -65,7 +65,7 @@ if let interfaceAddress = CommandLine.arguments.dropFirst().first,
 // For this chat protocol we temporarily squat on 224.1.0.26. This is a reserved multicast IPv4 address,
 // so your machine is unlikely to have already joined this group. That helps properly demonstrate correct
 // operation. We use port 7654 because, well, because why not.
-let chatMulticastGroup = try! SocketAddress(ipAddress: "94.156.64.191", port: 7654)
+let chatMulticastGroup = try! SocketAddress(ipAddress: "224.1.0.26", port: 7654)
 let group = MultiThreadedEventLoopGroup(numberOfThreads: 1)
 
 // Begin by setting up the basics of the bootstrap.
