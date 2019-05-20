@@ -20,6 +20,18 @@ private final class EchoHandler: ChannelInboundHandler {
     public func channelRead(ctx: ChannelHandlerContext, data: NIOAny) {
         // As we are not really interested getting notified on success or failure we just pass nil as promise to
         // reduce allocations.
+       
+        let envelope = self.unwrapInboundIn(data)
+        var buffer = envelope.data
+        
+        // To begin with, the chat messages are simply whole datagrams, no other length.
+        guard let message = buffer.readString(length: buffer.readableBytes) else {
+            print("Error: invalid string received")
+            return
+        }
+        
+        print("\(envelope.remoteAddress): \(message)")
+        
         ctx.write(data, promise: nil)
     }
 
