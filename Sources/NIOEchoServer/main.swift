@@ -67,7 +67,7 @@ let arguments = CommandLine.arguments
 let arg1 = arguments.dropFirst().first
 let arg2 = arguments.dropFirst().dropFirst().first
 
-let defaultHost = "::1"
+let defaultHost = "0.0.0.0"
 let defaultPort = 9999
 
 enum BindTo {
