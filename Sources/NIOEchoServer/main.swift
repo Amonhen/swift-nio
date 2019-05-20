@@ -14,7 +14,8 @@
 import NIO
 
 private final class EchoHandler: ChannelInboundHandler {
-    public typealias InboundIn = ByteBuffer
+    public typealias InboundIn = AddressedEnvelope<ByteBuffer>
+    //public typealias InboundIn = ByteBuffer
     public typealias OutboundOut = ByteBuffer
 
     public func channelRead(ctx: ChannelHandlerContext, data: NIOAny) {
